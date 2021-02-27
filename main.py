@@ -49,7 +49,7 @@ def texttobraille(y):
        f=l[flag]
        if f=='and' or f=='for' or f=='the' or f=='of' or f=='with' or f=='child' or f=='shall' or f=='this' or f=='which' or f=='out'or f=='still' or f=='be' or f=='in' or f=='was' or f=='his':
             decode=code_table[f]
-            print(decode,end='   ')
+            h.append(decode+" ")
        else:
           if  f=='about':
               f='ab'
@@ -87,7 +87,7 @@ def texttobraille(y):
               decode=code_table[i]
               h.append(decode+" ")
        flag+=1
-    return render_template("texttobraille.html", note=l)
+    return render_template("texttobraille.html", note=h)
 
 
 if __name__=="__main__":
