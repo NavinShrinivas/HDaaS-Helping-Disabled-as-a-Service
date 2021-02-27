@@ -3,5 +3,21 @@
     <head><h1 style="text-align: center;">You have reached the homepage of the service</h1></head>
     <body>
         <h2>Sub-Service of the service and how to use them:</h2>
+        <h3><b>Sub-Service : Tippoff-Avoider</b></h3>
+        <ul>
+        <li><p>This service is to be used to detect if a slope is safe to climb over </p></li>
+        <li><p>service call format : http://locahost:5000/tippoffservice/x/y/typ </p></li>
+        <li><p>OPTIONS : 
+            <ul>
+                <li>x : height between flat floor and sensor [can be hard coded]</li>
+                <li>y : data recived from sensor of distance between sensor and slope</li>
+                <li>type :
+                    <ol>
+                        <li>wa : without assistance saftey tolerances of ADA standards will be taken into account</li>
+                        <li>a : assisted saftey tolerances of ADA standards will be taken into account</li>
+                    </ol>
+                </li>
+            </ul>
+        </ul>
     </body>
 </html>

@@ -25,9 +25,11 @@ def tippoffservice(x,y,typ):
         safe_flag=True
     txt=""
     if(safe_flag==True):
-        txt="the slope is safe to climb over"
+        txt="True : the slope is safe to climb over"
     else:
-        txt="the slope is not safe to climb over"
+        txt="False : the slope is not safe to climb over" #adding the False and True so that any other service and strip and l[0] to see status
+        print('\a')
+        print('\a')
         print('\a')
     return render_template('tippoffservice.html', value=txt)
 
