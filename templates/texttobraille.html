@@ -1,6 +1,10 @@
 <html>
     <title>Sub-Service : Text to Braille </title>
-    <body>        
-        <p><p>{{value}}</p></p>
+    <body>  
+        <form method="POST" action="http://localhost:5000/txt-braille">
+            text: <input type="text" name="data" required>
+            <input type="submit" value="Submit">
+        </form>
+           <p>{{note}}</p>
     </body>
 </html>
