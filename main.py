@@ -35,19 +35,58 @@ def tippoffservice(x,y,typ):
 
 
 @app.route("/txt-braille/<y>")
-# def message(a):  
-#     return render_template('texttobraille.html', value=a)
-# def checkfornext(a):
-#     return render_template('inputforbraille.html',letter=a) 
+
 def texttobraille(y):
-    # if request.method == 'POST':
-    #     y = str(request.form.get("data"))
+   
     x=y.lower()
-    code_table={'a': '1 0 0 0 0 0','b': '1 1 0 0 0 0','c': '1 0 0 1 0 0','d': '1 0 0 1 1 0','e': '1 0 0 0 1 0','f': '1 1 0 1 0 0','g': '1 1 0 1 1 0','h': '1 1 0 0 1 0', 'i': '0 1 0 1 0 0 ', 'j': '0 1 0 1 1 0', 'k': '1 0 1 0 0 0', 'l': '1 1 1 0 0 0','m': '1 0 1 1 0 0', 'n': '1 0 1 1 1 0','o': '1 0 1 0 1 0 ','p': '1 1 1 1 0 0 ','q': '1 1 1 1 1 0','r': '1 1 1 0 1 0','s': '0 1 1 1 0 0', 't': '0 1 1 1 1 0','u': '1 0 1 0 0 1','v': '1 1 1 0 0 1','w': '0 1 0 1 1 1','x': '1 0 1 1 0  1','y': '1 0 1 1 1 1','z': '1 0 1 0 1 1','#': '0 0 1 1 1 1','1': '1 0 0 0 0  0','2': '1 1 0 0 0 0','3': '1 0 0 1 0 0','4': '1 0 0 1 1 0','5': '1 0 0 0 1 0','6': '1 1 0 1 0 0','7': '1 1 0 1 1 0','8': '1 1 0 0 1 0','9': '0 1 0 1 0 0','0': '0 1 0 1 1 0',' ': '0 0 0 0 0 0'}
+    code_table={'a': '1 0 0 0 0 0','b': '1 1 0 0 0 0','c': '1 0 0 1 0 0','d': '1 0 0 1 1 0','e': '1 0 0 0 1 0','f': '1 1 0 1 0 0','g': '1 1 0 1 1 0','h': '1 1 0 0 1 0', 'i': '0 1 0 1 0 0 ', 'j': '0 1 0 1 1 0', 'k': '1 0 1 0 0 0', 'l': '1 1 1 0 0 0','m': '1 0 1 1 0 0', 'n': '1 0 1 1 1 0','o': '1 0 1 0 1 0 ','p': '1 1 1 1 0 0 ','q': '1 1 1 1 1 0','r': '1 1 1 0 1 0','s': '0 1 1 1 0 0', 't': '0 1 1 1 1 0','u': '1 0 1 0 0 1','v': '1 1 1 0 0 1','w': '0 1 0 1 1 1','x': '1 0 1 1 0  1','y': '1 0 1 1 1 1','z': '1 0 1 0 1 1','#': '0 0 1 1 1 1','1': '1 0 0 0 0  0','2': '1 1 0 0 0 0','3': '1 0 0 1 0 0','4': '1 0 0 1 1 0','5': '1 0 0 0 1 0','6': '1 1 0 1 0 0','7': '1 1 0 1 1 0','8': '1 1 0 0 1 0','9': '0 1 0 1 0 0','0': '0 1 0 1 1 0',' ': '0 0 0 0 0 0',',':'0 1 0 0 0 0',';':'0 1 1 0 0 0',':':'0 1 0 0 10','.':'0 1 0 0 1 1','?':'0 1 1 0 0 1','!':'0 1 1 0 1 0','-':'0 0 1 0 0 1','and':'1 1 1 1 0 1','for':'1 1 1 1 1 1','of':'1 1 1 0 1 1','the':'0 1 1 1 0 1','with':'0 1 1 1 1 1','child':'1 0 0 0 0 1','shall':'1 0 0 1 0 1','this':'1 0 0 1 1 1','which':'1 0 0 0 1 1','out':'1 1 0 0 1 1','still':'0 0 1 1 0 0','be':'0 1 1 0 0 0','in':'0 0 1 0 1 0','was':'0 0 1 0 1 1','his':'0 1 1 0 0 1','th':'1 0 0 1 1 1','ing':'0 0 1 1 0 1','ed':'1 1 0 1 0 1','ing':'001101','ed':'110101','th':'100111'}
     l=list()
-    for i in x :
-        decode=code_table[i]
-        l.append(decode+" ")
+    l=x.split()
+    length=len(l)
+    flag=0
+    b=[]
+    while length>flag :
+       f=l[flag]
+       if f=='and' or f=='for' or f=='the' or f=='of' or f=='with' or f=='child' or f=='shall' or f=='this' or f=='which' or f=='out'or f=='still' or f=='be' or f=='in' or f=='was' or f=='his':
+          decode=code_table[f]
+          print(decode,end='   ')
+       else:
+          if  f=='about':
+              f='ab'
+          elif 'ing' in f:
+              f.replace('ing','&')
+          elif 'ed' in f:
+              f.replace('ed','$')
+          elif 'th' in f:
+              f.replace('th','^')
+          elif f=='above':
+              f='abv'
+          elif f=='according':
+              f='ac'
+          elif f=='after':
+              f='af'
+          elif f=='afternoon':
+              f='afn'
+          elif f=='afterward':
+              f='afw'
+          elif f=='herself':
+              f='herf'
+          elif f=='him':
+              f='hm'
+          elif f=='much':
+              f='mch'
+          elif f=='said':
+              f='sd'
+          elif f=='today':
+              f='td'
+          elif f=='tomorrow':
+              f='tm'
+          elif f=='your':
+              f='yr'
+          for i in f:
+              decode=code_table[i]
+              l.append(decode+" ")
+       flag+=1
     return render_template("texttobraille.html", note=l)
 
 
