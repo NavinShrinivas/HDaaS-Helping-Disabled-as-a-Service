@@ -1,5 +1,6 @@
 # HDaaS-Helping-Disabled-as-a-Service
-Service having multiple Sub-Service with the sole aim of helping the disabled with use or electronics and robotis
+<hr>
+Service having multiple Sub-Service with the sole aim of helping the disabled with use or electronics and robotics.<br><hr>
 Domains our projects falls under :
 	1.engineering (using basic physics  and math for one Sub-Service)
 	2.web development (flask , api’s by google)
