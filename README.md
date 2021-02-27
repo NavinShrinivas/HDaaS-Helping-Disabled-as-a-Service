@@ -17,7 +17,7 @@ worry not our project aims to help these people in situations as such mentioned,
 <p>
 	<ul>
         <li><p>This service is to be used to detect if a slope is safe to climb over </p></li>
-        <li><p>service call format : http://locahost:5000/tippoffservice/x/y/typ </p></li>
+        <li><p>service call format : <code>http://locahost:5000/tippoffservice/x/y/typ </code></p></li>
         <li><p>OPTIONS : 
             <ul>
                 <li>x : height between flat floor and sensor [can be hard coded]</li>
@@ -32,7 +32,7 @@ worry not our project aims to help these people in situations as such mentioned,
         </ul>
 <h2>TextToBraille</h2>
 <p>this converts the text to braille format considering a mechnical solutiion by desing a device with mechnical brailles</p>
-<p>service call format:http://localhost:5000/txt-braille/txt</p>
+<p>service call format : <code>http://localhost:5000/txt-braille/txt </code></p>
 <p>This returns a list with each elements of strings of length 6 each charecter either 1 or 0. The index of the number corresponds to a particular posistion on 3X6 Braille matrix</p>
 <hr>
 <h1>FUTURE TO ADD SUB-SERIVCES</h1>
