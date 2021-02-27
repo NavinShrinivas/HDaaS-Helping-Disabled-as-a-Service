@@ -54,11 +54,11 @@ def texttobraille(y):
           if  f=='about':
               f='ab'
           elif 'ing' in f:
-              f.replace('ing','&')
+              f=f.replace('ing','&')
           elif 'ed' in f:
-              f.replace('ed','$')
+              f=f.replace('ed','$')
           elif 'th' in f:
-              f.replace('th','^')
+              f=f.replace('th','^')
           elif f=='above':
               f='abv'
           elif f=='according':
