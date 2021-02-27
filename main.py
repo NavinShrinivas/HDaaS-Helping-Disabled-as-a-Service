@@ -44,7 +44,6 @@ def texttobraille(y):
     l=x.split()
     length=len(l)
     flag=0
-    b=[]
     while length>flag :
        f=l[flag]
        if f=='and' or f=='for' or f=='the' or f=='of' or f=='with' or f=='child' or f=='shall' or f=='this' or f=='which' or f=='out'or f=='still' or f=='be' or f=='in' or f=='was' or f=='his':
