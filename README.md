@@ -33,7 +33,7 @@ worry not our project aims to help these people in situations as such mentioned,
 <h2>TextToBraille</h2>
 <p>this converts the text to braille format considering a mechnical solutiion by desing a device with mechnical brailles</p>
 <p>service call format : <code>http://localhost:5000/txt-braille/txt </code></p>
-<p>This returns a list with each elements of strings of length 6 each charecter either 1 or 0. The index of the number corresponds to a particular posistion on 3X6 Braille matrix</p>
+<p>This returns a list with each elements of strings of length 6 each charecter either 1 or 0. The index of the number corresponds to a particular posistion on 2X3 Braille matrix</p>
 <hr>
 <h1>FUTURE TO ADD SUB-SERIVCES</h1>
 <ul>
