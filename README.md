@@ -37,5 +37,5 @@ worry not our project aims to help these people in situations as such mentioned,
 <hr>
 <h1>FUTURE TO ADD SUB-SERIVCES</h1>
 <ul>
-	<li>TTSService real time text to speech service</li>
+	<li>STTService real time text to speech service</li>
 </ul>
