@@ -7,7 +7,7 @@
         <ul>
         <li><p>This service is to be used to detect if a slope is safe to climb over </p></li>
         <li><p>service call format : http://locahost:5000/tippoffservice/x/y/typ </p></li>
-        <li><p>OPTIONS : 
+        <li><p>OPTIONS : </p>
             <ul>
                 <li>x : height between flat floor and sensor [can be hard coded]</li>
                 <li>y : data recived from sensor of distance between sensor and slope</li>
@@ -18,6 +18,18 @@
                     </ol>
                 </li>
             </ul>
+        <li><p>OUTPUT : use web scrapper and split and the first index of the list will be either "False" or "True"</p></li>
+        </ul>
+        <h3><b>Sub-Service : TxtToBraille</b></h3>
+        <ul>
+            <li><p>this service covertes any text given to it into formas of braille in 1's and 0's <br> we aimed on feeding this data into a mechnical braille and make a "dynamic braille"</p></li>
+            <li>service call format : http://localhost/txt-braille/y</li>
+            <li><p>OPTIONS :</p>
+                <ul>
+                    <li>y : can be any text with or without spaces</li>
+                </ul>
+            </li>
+            <li><p>OUTPUT : on web scrappoing a list of 6 length string are given out wherer each index of str corresponds to a braille</p></li>
         </ul>
     </body>
 </html>
