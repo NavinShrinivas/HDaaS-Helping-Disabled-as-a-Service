@@ -1,11 +1,11 @@
-from flask import Flask, render_template ,redirect , request
+from flask import Flask, render_template ,redirect , request 
 import math
 
 
 app=Flask(__name__)
-@app.route("/home")
+@app.route("/home",methods=['GET'])
 def home():
-    return render_template('home.html')
+    return render_template('home.html' , )
 
 @app.route("/")
 def index():
